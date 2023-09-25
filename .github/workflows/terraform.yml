@@ -26,3 +26,9 @@ jobs:
         run: |
           echo 'jelo PLAN'
           sleep 10
+
+      - name: apply
+        if: github.event.pull_request.merged == true
+        run: |
+          echo 'jelo Apply'
+          sleep 10
