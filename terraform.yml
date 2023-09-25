@@ -6,6 +6,17 @@ on:
       - main
     types: [closed]
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - qa
+        - load
+        - staging
 
 
 permissions:
@@ -24,5 +35,5 @@ jobs:
 
       - name: PLAN
         run: |
-          echo 'PLAN'
+          echo 'MY PLAN'
           sleep 10
