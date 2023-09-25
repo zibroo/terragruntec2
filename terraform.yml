@@ -1,0 +1,28 @@
+name: Terragrunt Workflow
+
+on:
+  pull_request:
+    branches: 
+      - main
+    types: [closed]
+  workflow_dispatch:
+
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terragrunt:
+    runs-on: ubuntu-latest #runner
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3 
+
+      - name: PLAN
+        run: |
+          echo 'PLAN'
+          sleep 10
