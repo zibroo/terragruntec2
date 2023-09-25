@@ -3,7 +3,7 @@ name: Terragrunt Workflow
 on:
   pull_request:
     branches: 
-      - main
+      - master
     types: [closed]
   workflow_dispatch:
 
